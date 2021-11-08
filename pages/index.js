@@ -10,7 +10,6 @@ export default function Home() {
   const [tab, setTab] = useState("harvest");
   const [imageId, setImageId] = useState("");
   const [font, setFont] = useState("Sacramento");
-  const [textColor, setTextColor] = useState("000000");
   const [text, setText] = useState("Change Text");
 
   const openWidget = () => {
@@ -97,7 +96,7 @@ export default function Home() {
           </button>
 
           <h2 className="text-2xl block text-md text-[#000000] mb-2 mt-6">
-            Set Custom Message, color and Font
+            Set Custom Message and Font
           </h2>
           {tab === "harvest" ? (
             <div className="flex items-center">
@@ -297,12 +296,7 @@ export default function Home() {
         </section>
         {(imageId && (
           <div className="mt-10">
-            <TransformImage
-              font={font}
-              text={text}
-              image={imageId}
-              textColor={textColor}
-            />
+            <TransformImage font={font} text={text} image={imageId} />
           </div>
         )) || (
           <h2 className="text-2xl mt-3">The result will be displayed here</h2>

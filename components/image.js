@@ -1,7 +1,7 @@
 import { CloudinaryContext, Transformation, Image } from "cloudinary-react";
 import { useEffect, useRef, useState } from "react";
 
-const TransformImage = ({ font, text, image, textColor }) => {
+const TransformImage = ({ font, text, image }) => {
   const ref = useRef(null);
   const [url, setURL] = useState("");
   const [copy, setCopy] = useState("Copy File");
@@ -9,7 +9,7 @@ const TransformImage = ({ font, text, image, textColor }) => {
   useEffect(() => {
     setURL(ref.current.element.current.src);
     return () => {};
-  }, [font, text, image, textColor]);
+  }, [font, text, image]);
 
   const handleCopyToClip = () => {
     navigator.clipboard
@@ -21,24 +21,14 @@ const TransformImage = ({ font, text, image, textColor }) => {
   return (
     <div>
       <CloudinaryContext cloudName="olanetsoft">
-        <Image
-          publicId={image}
-          secure="true"
-          ref={ref}
-          //   height="400"
-          width="700"
-        >
+        <Image publicId={image} secure="true" ref={ref} width="700">
           <Transformation
-            overlay={`text:${font}_65_bold:${text},co_rgb:${textColor}`}
+            overlay={`text:${font}_65_bold:${text}`}
             gravity="north"
             y="300"
           />
         </Image>
       </CloudinaryContext>
-
-      {/* <button className="btn widget-btn" onClick={handleCopyToClip}>
-        {copy}
-      </button> */}
 
       <div className="mt-5">
         <h5>Shareable link</h5>
