@@ -1,7 +1,7 @@
 import { CloudinaryContext, Transformation, Image } from "cloudinary-react";
 import { useEffect, useRef, useState } from "react";
 
-const TransformImage = ({ font, text, image }) => {
+const TransformImage = ({ font, text, image, name }) => {
   const ref = useRef(null);
   const [url, setURL] = useState("");
   const [copy, setCopy] = useState("Copy File");
@@ -22,10 +22,25 @@ const TransformImage = ({ font, text, image }) => {
     <div>
       <CloudinaryContext cloudName="olanetsoft">
         <Image publicId={image} secure="true" ref={ref} width="700">
+          <Transformation effect="brightness_hsb:-30" />
           <Transformation
             overlay={`text:${font}_65_bold:${text}`}
             gravity="north"
-            y="300"
+          />
+          <Transformation
+            color="#FFFFFF"
+            overlay={{
+              fontFamily: "Dancing Script",
+              fontSize: 50,
+              fontWeight: "bold",
+              text: `from ${name}`,
+            }}
+          />
+          <Transformation
+            flags="layer_apply"
+            gravity="center"
+            x="450"
+            y="150"
           />
         </Image>
       </CloudinaryContext>

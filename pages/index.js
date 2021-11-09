@@ -11,6 +11,7 @@ export default function Home() {
   const [imageId, setImageId] = useState("");
   const [font, setFont] = useState("Sacramento");
   const [text, setText] = useState("Change Text");
+  const [name, setName] = useState("");
 
   const openWidget = () => {
     // create the widget
@@ -46,7 +47,7 @@ export default function Home() {
 
       <main className="">
         <h1 className="text-4xl text-center">Custom Holiday Card Generator</h1>
-        <header className="flex border-b-2 mt-7 mb-7">
+        <header className="flex border-b-2 mt-5 mb-5">
           <Link href="#">
             <a
               className={`text-base capitalize mr-8 pb-4 ${
@@ -96,13 +97,24 @@ export default function Home() {
           </button>
 
           <h2 className="text-2xl block text-md text-[#000000] mb-2 mt-6">
-            Set Custom Message and Font
+            Set Name, Custom Message and Font
           </h2>
+
+          <div className="mt-4 mb-4">
+            <div>
+              <label className="inline-flex items-center mb-2">Name </label>
+              <input
+                name="name"
+                onChange={(event) => setName(event.target.value)}
+                className="appearance-none block text-gray-700 border border-blue-500 rounded py-2 px-3 leading-tight "
+              />
+            </div>
+          </div>
           {tab === "harvest" ? (
             <div className="flex items-center">
               <div className="mb-6 mt-3">
                 <select
-                  className="origin-top-right absolute mt-4 w-76 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-8 focus:outline-none"
+                  className="origin-top-right absolute mt-4 w-76 rounded-md shadow-lg bg-white border border-blue-500 ring-opacity-8 focus:outline-none"
                   role="menu"
                   aria-orientation="vertical"
                   aria-labelledby="menu-button"
@@ -122,7 +134,7 @@ export default function Home() {
                     </option>
                   ))}
                 </select>
-                <div class="mt-20 mb-2">
+                <div className="mt-20 mb-2">
                   <div>
                     <label className="inline-flex items-center">
                       <input
@@ -132,7 +144,7 @@ export default function Home() {
                         name="Font"
                         onChange={(event) => setFont(event.target.value)}
                       />
-                      <span class="ml-2">Dancing Script</span>
+                      <span className="ml-2">Dancing Script</span>
                     </label>
                   </div>
                   <div>
@@ -144,7 +156,7 @@ export default function Home() {
                         name="Font"
                         onChange={(event) => setFont(event.target.value)}
                       />{" "}
-                      <span class="ml-2">Roboto</span>
+                      <span className="ml-2">Roboto</span>
                     </label>
                   </div>
                   <div>
@@ -156,7 +168,7 @@ export default function Home() {
                         name="Font"
                         onChange={(event) => setFont(event.target.value)}
                       />{" "}
-                      <span class="ml-2">Sacramento</span>
+                      <span className="ml-2">Sacramento</span>
                     </label>
                   </div>
                 </div>
@@ -166,7 +178,7 @@ export default function Home() {
             <div className="flex items-center">
               <div className="mb-6 mt-3">
                 <select
-                  className="origin-top-right absolute mt-4 w-76 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-8 focus:outline-none"
+                  className="origin-top-right absolute mt-4 w-76 rounded-md shadow-lg bg-white border border-blue-500 ring-opacity-8 focus:outline-none"
                   role="menu"
                   aria-orientation="vertical"
                   aria-labelledby="menu-button"
@@ -188,7 +200,7 @@ export default function Home() {
                     </option>
                   ))}
                 </select>
-                <div class="mt-20 mb-2">
+                <div className="mt-20 mb-2">
                   <div>
                     <label className="inline-flex items-center">
                       <input
@@ -198,7 +210,7 @@ export default function Home() {
                         name="Font"
                         onChange={(event) => setFont(event.target.value)}
                       />
-                      <span class="ml-2">Dancing Script</span>
+                      <span className="ml-2">Dancing Script</span>
                     </label>
                   </div>
                   <div>
@@ -210,7 +222,7 @@ export default function Home() {
                         name="Font"
                         onChange={(event) => setFont(event.target.value)}
                       />{" "}
-                      <span class="ml-2">Roboto</span>
+                      <span className="ml-2">Roboto</span>
                     </label>
                   </div>
                   <div>
@@ -222,7 +234,7 @@ export default function Home() {
                         name="Font"
                         onChange={(event) => setFont(event.target.value)}
                       />{" "}
-                      <span class="ml-2">Sacramento</span>
+                      <span className="ml-2">Sacramento</span>
                     </label>
                   </div>
                 </div>
@@ -232,7 +244,7 @@ export default function Home() {
             <div className="flex items-center">
               <div className="mb-6 mt-3">
                 <select
-                  className="origin-top-right absolute mt-4 w-76 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-8 focus:outline-none"
+                  className="origin-top-right absolute mt-4 w-76 rounded-md shadow-lg bg-white border border-blue-500 ring-opacity-8 focus:outline-none"
                   role="menu"
                   aria-orientation="vertical"
                   aria-labelledby="menu-button"
@@ -252,7 +264,7 @@ export default function Home() {
                     </option>
                   ))}
                 </select>
-                <div class="mt-20 mb-2">
+                <div className="mt-20 mb-2">
                   <div>
                     <label className="inline-flex items-center">
                       <input
@@ -262,7 +274,7 @@ export default function Home() {
                         name="Font"
                         onChange={(event) => setFont(event.target.value)}
                       />
-                      <span class="ml-2">Dancing Script</span>
+                      <span className="ml-2">Dancing Script</span>
                     </label>
                   </div>
                   <div>
@@ -274,7 +286,7 @@ export default function Home() {
                         name="Font"
                         onChange={(event) => setFont(event.target.value)}
                       />{" "}
-                      <span class="ml-2">Roboto</span>
+                      <span className="ml-2">Roboto</span>
                     </label>
                   </div>
                   <div>
@@ -286,7 +298,7 @@ export default function Home() {
                         name="Font"
                         onChange={(event) => setFont(event.target.value)}
                       />{" "}
-                      <span class="ml-2">Sacramento</span>
+                      <span className="ml-2">Sacramento</span>
                     </label>
                   </div>
                 </div>
@@ -296,7 +308,12 @@ export default function Home() {
         </section>
         {(imageId && (
           <div className="mt-10">
-            <TransformImage font={font} text={text} image={imageId} />
+            <TransformImage
+              font={font}
+              text={text}
+              image={imageId}
+              name={name}
+            />
           </div>
         )) || (
           <h2 className="text-2xl mt-3">The result will be displayed here</h2>
