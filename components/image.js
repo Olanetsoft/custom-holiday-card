@@ -22,7 +22,7 @@ const TransformImage = ({ font, text, image, name }) => {
     <div>
       <CloudinaryContext cloudName="olanetsoft">
         <Image publicId={image} secure="true" ref={ref} width={1000}>
-          <Transformation effect="brightness_hsb:-50" />
+          <Transformation effect="brightness_hsb:-40" />
           <Transformation crop="fit" effect="blur:100" />
           <Transformation
             color="#FFFFFF"
