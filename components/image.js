@@ -21,17 +21,24 @@ const TransformImage = ({ font, text, image, name }) => {
   return (
     <div>
       <CloudinaryContext cloudName="olanetsoft">
-        <Image publicId={image} secure="true" ref={ref} width="700">
+        <Image publicId={image} secure="true" ref={ref} width={1000}>
           <Transformation effect="brightness_hsb:-50" />
+          <Transformation crop="fit" effect="blur:100" />
           <Transformation
-            overlay={`text:${font}_65_bold:${text}`}
+            color="#FFFFFF"
+            overlay={`text:${font}_38_bold:${text}`}
             gravity="north"
+            textAlign="center"
+            background=""
+            width="500"
+            crop="fit"
           />
+
           <Transformation
             color="#FFFFFF"
             overlay={{
               fontFamily: "Dancing Script",
-              fontSize: 50,
+              fontSize: 25,
               fontWeight: "bold",
               text: `from ${name}`,
             }}

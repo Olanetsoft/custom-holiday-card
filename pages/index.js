@@ -9,7 +9,7 @@ import thanksGivingMessages from "../utils/thanksgiving.messages.json";
 export default function Home() {
   const [tab, setTab] = useState("harvest");
   const [imageId, setImageId] = useState("");
-  const [font, setFont] = useState("Sacramento");
+  const [font, setFont] = useState("Dancing Script");
   const [text, setText] = useState("Change Text");
   const [name, setName] = useState("");
 
